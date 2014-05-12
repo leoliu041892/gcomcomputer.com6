@@ -109,7 +109,7 @@
 			<ul class="slides">
 <?php 
 
-   $result = mysql_query("SELECT * FROM gcom ORDER BY RAND() LIMIT 5") or die(mysql_error());	
+   $result = mysql_query("SELECT * FROM gcom where onsale='yes'") or die(mysql_error());	
 	while($row = mysql_fetch_array($result))
 		{
 			$Listid = $row['Id'];
@@ -141,6 +141,9 @@
     	    $sellingprice = $row['sellingprice'];
     	    $soldprice = $row['soldprice'];
 
+    	    $secprice = $row['secprice'];
+
+
 
 if($avaliablility =="Sold"){echo "<li style=\"display:none;\">";}else{
 
@@ -159,7 +162,10 @@ echo "<dd class=\"heading\"><b>$year&nbsp$size\"&nbsp$type</b></dd>";
 {echo "<dd class=\"heading\"><b>DowntownStore</b></dd>";}
  if($avaliablility =="Sold")
 {echo "<dd class=\"heading\"><b>Sold</b></dd>";echo "<dd><span class=\"heading\">Sold@$$soldprice</dd>";}
- else{echo "<dd><span class=\"heading\">Selling@$$sellingprice</dd>";}
+ elseif($secprice =="0"){echo "<dd><span class=\"heading\">On Sale@$$sellingprice</dd><br/>";}
+ if($avaliablility =="Sold")
+{echo "<dd class=\"heading\"><b>Sold</b></dd>";echo "<dd><span class=\"heading\">Sold@$$soldprice</dd>";}
+ elseif($secprice !="0"){echo "<dd><span class=\"heading\">On Sale@$$secprice<br/>Was@$$sellingprice</dd><br/>";}
 echo "</dl>";
 echo "<a href=\"GCOM-One-Product.php?id=$Listid\" class=\"button orange\">Details &raquo;</a>";
 echo "</div>";
@@ -226,10 +232,10 @@ echo "</li>";
 				
 			</form><!--/ .form-panel-->
 			<?php 
-$brandsearch = $_GET['Brand'];
-$min = $_GET['minprice'];
-$max = $_GET['maxprice'];
-$typesearch = $_GET['type'];
+@$brandsearch = $_GET['Brand'];
+@$min = $_GET['minprice'];
+@$max = $_GET['maxprice'];
+@$typesearch = $_GET['type'];
 
 
 

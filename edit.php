@@ -62,6 +62,9 @@ if($id)
     $editID3 = $row['SBasked'];
     $editpic = $row['Pic'];
     $editcpucores =$row['cpucores'];
+    $onsale =$row['onsale'];
+    $editsecprice =$row['editsecprice'];
+    
 
 
 
@@ -103,6 +106,9 @@ if($id)
     $ID3 =trim($_POST['condition']);
     $pic =trim($_POST['pic']);
     $cpucores =trim($_POST['cpucores']);
+    $onsale =trim($_POST['onsale']);
+    $secprice =trim($_POST['secprice']);
+
 
 	if(isset($_POST['submit']))
 {      
@@ -137,7 +143,8 @@ if($id)
 				 		DisplayOutput='$DisplayOutput',DVDdrive='$DVDdrive',webcam='$webcam',
 				 		wifi='$wifi',lan='$lan',OS='$OS',OSversion='$OSversion',SystemType='$SystemType',
 				 		Pic='$pic',sellingprice='$sellingprice',soldprice='$soldprice',
-				 		customername='$customername',customercell='$customercell',avaliablility='$avaliablility',ebay='$ebay',SbaskedforID='$ID2',SBasked='$ID3'
+				 		customername='$customername',customercell='$customercell',avaliablility='$avaliablility',ebay='$ebay',SbaskedforID='$ID2',SBasked='$ID3',onsale='$onsale',secprice='$secprice'
+
 				 		WHERE Id='$editid'") or die(mysql_error());
 				 		
 			$message = "Device successfully edited.";
@@ -170,6 +177,8 @@ if($id)
 		</select>
 		<p><label>Price:</label>
 		<input type="text"  name="sellingprice" value="<?php echo $editsellingprice; ?>" placeholder="Selling Price"/></p>
+			<p><label>Second Price:</label>
+		<input type="text"  name="secprice" value="<?php echo $editsecprice; ?>" placeholder="Second Selling Price"/></p>
      
 	<p><label>Brand</label>
 		<select name="brand">
@@ -309,6 +318,16 @@ if($id)
 
    <p><label>Condition:</label>
 		<input type="text"  name="condition" value="<?php echo $editID3; ?>" placeholder="How it looks"/></p>
+
+
+		<p><label>On Sale?:</label>
+				<select name="onsale">
+					<option value="yes"<?php if($onsale == "yes") echo "selected=\"selected\""; ?>>yes</option>
+					<option value="no"<?php if($onsale == "no") echo "selected=\"selected\""; ?>>No</option>
+					<option value=""<?php if($onsale == "") echo "selected=\"selected\""; ?>>Select</option>
+					
+				</select>	
+			</p>
 	<p><label>&nbsp;</label>
 		<input type="submit" name="submit" value="Submit" />
 		<input type="submit" name="delete" value="Delete" /></p>

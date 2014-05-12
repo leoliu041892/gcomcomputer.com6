@@ -46,6 +46,7 @@
     $ID3 =trim($_POST['condition']);
     $pic =trim($_POST['pic']);
     $cpucores =trim($_POST['cpucores']);
+     $onsale =trim($_POST['onsale']);
 
 	if(isset($_POST['submit']))
 {      
@@ -80,7 +81,7 @@
 				 		DisplayOutput,DVDdrive,webcam,
 				 		wifi,lan,OS,OSversion,SystemType,
 				 		Pic,sellingprice,soldprice,
-				 		customername,customercell,avaliablility,ebay,SbaskedforID,SBasked
+				 		customername,customercell,avaliablility,ebay,SbaskedforID,SBasked,onsale
 				 		) VALUES 
 						('$brand','$year','$type','$model',
 							'$serialnumb','$cpu','$cpumodel','$cpuspeed','$cpucores',
@@ -89,7 +90,7 @@
 							'$DisplayOutput','$DVDdrive','$webcam',
 							'$wifi','$lan','$OS','$OSversion','$SystemType',
 							'$pic','$sellingprice','$soldprice',
-							'$customername','$customercell','$avaliablility','$ebay','$ID2','$ID3'
+							'$customername','$customercell','$avaliablility','$ebay','$ID2','$ID3','$onsale'
 						)") or die(mysql_error());
 			$message = "Device successfully added.";
 		}
@@ -249,17 +250,20 @@
 					<option value="10.7.5">10.7.5</option>
 					
 				</select>	
- 	<p><label>System Type:</label>
-				<select name="SystemType">
-					<option value="X64">X64</option>
-					<option value="X86">X86</option>
-					
-				</select>	
+
     <p><label>Image:</label>
 		<input type="text"  name="pic" placeholder="Link of image"/></p>
 
    <p><label>Condition:</label>
 		<input type="text"  name="condition" placeholder="How it looks"/></p>
+
+		 	<p><label>On Sale?:</label>
+				<select name="onsale">
+					<option value="yes">yes</option>
+					<option value="no">No</option>
+					
+				</select>	
+			</p>
 	<p><label>&nbsp;</label>
 		<input type="submit" name="submit" value="Submit" /></p>
 	<?php

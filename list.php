@@ -32,6 +32,8 @@
     $SystemType = $row['SystemType'];
     	$avaliablility = $row['avaliablility'];
     	$sellingprice = $row['sellingprice'];
+    	 $onsale = $row['onsale'];
+    	  $secprice = $row['secprice'];
 
    echo "<div id=\"Item\">";
 		    echo "<a href=\"output.php?id=$Listid\" >";
@@ -59,6 +61,9 @@
 		    if($lan =="Y"){echo"/";echo "LAN&nbsp";}
 
 		    echo"OS:$OS $OSversion&nbsp$SystemType<br />";
+if($onsale =="yes"){
+		      echo"Onsale Second Price: $secprice<br />";
+}
 echo "</div>";
 echo "</div>";
 echo "</a>";
