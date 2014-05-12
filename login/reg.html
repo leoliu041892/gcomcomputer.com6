@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>Register</title>
+  <style type="text/css">
+    html{font-size:12px;}
+	fieldset{width:520px; margin: 0 auto;}
+	legend{font-weight:bold; font-size:14px;}
+	label{float:left; width:70px; margin-left:10px;}
+	.left{margin-left:80px;}
+	.input{width:150px;}
+	span{color: #666666;}
+  </style>
+<script language=JavaScript>
+<!--
+
+function InputCheck(RegForm)
+{
+  if (RegForm.username.value == "")
+  {
+    alert("Username can not be empty!");
+    RegForm.username.focus();
+    return (false);
+  }
+  if (RegForm.password.value == "")
+  {
+    alert("Must set the password!");
+    RegForm.password.focus();
+    return (false);
+  }
+  if (RegForm.repass.value != RegForm.password.value)
+  {
+    alert("Passwords do not match!");
+    RegForm.repass.focus();
+    return (false);
+  }
+  if (RegForm.email.value == "")
+  {
+    alert("E-mail can not be empty!");
+    RegForm.email.focus();
+    return (false);
+  }
+}
+
+//-->
+</script>
+</head>
+<div>
+<fieldset>
+<legend>Register</legend>
+<form name="RegForm" method="post" action="reg.php" onSubmit="return InputCheck(this)">
+<p>
+<label for="username" class="label">Username:</label>
+<input id="username" name="username" type="text" class="input" />
+<span>(Required, 3-15 characters in length)</span>
+<p/>
+<p>
+<label for="password" class="label">Password:</label>
+<input id="password" name="password" type="password" class="input" />
+<span>(Required, not less than 6 letters)</span>
+<p/>
+<p>
+<label for="repass" class="label">Repeat password:</label>
+<input id="repass" name="repass" type="password" class="input" />
+<p/>
+<p>
+<label for="email" class="label">E-mail:</label>
+<input id="email" name="email" type="text" class="input" />
+<span>(Required)</span>
+<p/>
+<p>
+<input type="submit" name="submit" value="  Submit  " class="left" />
+</p>
+</form>
+</fieldset>
+</div>
+<body>
+</body>
+</html>

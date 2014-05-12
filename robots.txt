@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /internal.php
+Disallow: /input2.php
+Disallow: /input.php
+Disallow: /print.php
+Disallow: /edit.php
+Disallow: /invoice
