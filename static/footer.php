@@ -105,7 +105,6 @@
 </div><!--/ .wrap-->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
 <!--[if lt IE 9]>
         <script src="js/selectivizr-and-extra-selectors.min.js"></script>

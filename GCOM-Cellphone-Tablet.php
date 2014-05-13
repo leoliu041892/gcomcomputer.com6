@@ -1,4 +1,5 @@
 <?php
+$currentMenu = 2;
 $subtitle = "Cellphone & Tablet";
 include_once 'static/header.php';
 ?>

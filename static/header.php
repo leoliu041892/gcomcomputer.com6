@@ -7,20 +7,24 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        <title>Gcom Computer | <?php echo $subtitle?></title>
+        <title>Gcom Computer | <?php echo $subtitle ?></title>
 
         <meta name="Description" content="We provide the Best Refurbished or New iPhone, Sony, Samsung, BlackBerry, LG, Motorola phones, Tablets in Edmonton"/>
         <meta name="author" content="" />
-       
+
 
         <link rel="shortcut" href="images/favicon.ico" />
         <link rel="stylesheet" href="css/style.css" media="screen" />
         <link rel="stylesheet" href="css/skeleton.css" media="screen" />
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css" media="screen" />
+        <link rel="stylesheet" href="sliders/flexslider/flexslider.css" media="screen"/>
 
         <!-- HTML5 Shiv + detect touch events -->
         <script type="text/javascript" src="js/modernizr.custom.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    </head>
     <body class="menu-1 h-style-1 text-1">
 
         <div class="wrap">
@@ -68,14 +72,16 @@
                             </ul>
                         </li>
                         <li><a href="GCOM-Computer-Assesory-Part.php">Accessory / Part</a></li>
-                        <li><a href="GCOM-Service.html">Services</a>
-
-                        </li>
+                        <li><a href="GCOM-Service.php">Services</a></li>
                         <li><a href="GCOM-Contact-Us.php">Contact Us</a></li>
                     </ul>
 
                 </nav><!--/ #navigation-->
-
+                <script type="text/javascript">
+                    var currentMenu = <?php echo $currentMenu ?>;
+                    menuItems = $("#navigation > ul > li");
+                    menuItems[currentMenu].className = "current-menu-item";
+                </script>
             </header><!--/ #header-->
 
             <!-- - - - - - - - - - - - - - end Header - - - - - - - - - - - - - - - - -->	

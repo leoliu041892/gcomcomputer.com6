@@ -1,4 +1,5 @@
 <?php
+$currentMenu = 1;
 $subtitle = "All Computers";
 include_once 'static/header.php';
 ?>
